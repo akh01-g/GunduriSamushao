@@ -24,5 +24,14 @@
         android:id="@+id/cryptoApiFragment"
         tools:layout="@layout/fragment_crypto_api"
         android:name="com.example.gundurisamushao.view.fragment.CryptoApiFragment"
-        android:label="CryptoApiFragment" />
+        android:label="CryptoApiFragment" >
+        <action
+            android:id="@+id/action_cryptoApiFragment_to_cryptoDetailsFragment"
+            app:destination="@id/cryptoDetailsFragment" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/fragment_crypto_details"
+        android:id="@+id/cryptoDetailsFragment"
+        android:name="com.example.gundurisamushao.view.fragment.CryptoDetailsFragment"
+        android:label="CryptoDetailsFragment" />
 </navigation>
