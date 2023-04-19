@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.example.gundurisamushao.databinding.FragmentStartBinding;
 
@@ -24,5 +25,12 @@ public class StartFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        setListeners();
+    }
+
+    private void setListeners(){
+        binding.btnStart.setOnClickListener(view -> {
+            Navigation.findNavController(view).navigate(StartFragmentDirections.actionStartFragmentToSignInFragment());
+        });
     }
 }
