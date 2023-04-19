@@ -1,4 +1,4 @@
-package com.example.gundurisamushao.model;
+package com.example.gundurisamushao.model.remote;
 
 public class Brewery {
 
