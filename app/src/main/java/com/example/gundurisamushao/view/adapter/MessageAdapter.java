@@ -8,7 +8,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.gundurisamushao.databinding.MessageItemBinding;
+
+import com.example.gundurisamushao.databinding.ItemMessageBinding;
 import com.example.gundurisamushao.model.remote.Message;
 
 import java.util.ArrayList;
@@ -36,7 +37,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     @Override
     public MessageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new MessageViewHolder(
-                MessageItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false)
+                ItemMessageBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false)
         );
     }
 
@@ -52,8 +53,8 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     }
 
     public class MessageViewHolder extends RecyclerView.ViewHolder {
-        private MessageItemBinding binding;
-        public MessageViewHolder(MessageItemBinding binding) {
+        private ItemMessageBinding binding;
+        public MessageViewHolder(ItemMessageBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }
