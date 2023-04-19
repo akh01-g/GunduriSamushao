@@ -12,6 +12,10 @@
     <item
         android:id="@+id/apiFragment"
         android:icon="@drawable/ic_api"
-        android:title="Api"/>
+        android:title="Brewery Api"/>
 
+    <item
+        android:id="@+id/cryptoApiFragment"
+        android:icon="@drawable/ic_api"
+        android:title="Crypto Api"/>
 </menu>
