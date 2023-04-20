@@ -1,4 +1,4 @@
-package com.example.gundurisamushao.view.fragment;
+package com.example.gundurisamushao.view.fragment.auth;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

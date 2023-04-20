@@ -1,4 +1,4 @@
-package com.example.gundurisamushao.view.fragment;
+package com.example.gundurisamushao.view.fragment.auth;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import com.example.gundurisamushao.databinding.FragmentSigninBinding;
+import com.example.gundurisamushao.view.fragment.SignInFragmentDirections;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -33,10 +34,10 @@ public class SignInFragment extends Fragment {
 
     private void setListeners(){
         binding.btnForgotPassword.setOnClickListener(view -> {
-            Navigation.findNavController(view).navigate(SignInFragmentDirections.actionSignInFragmentToRecoveryFragment());
+            Navigation.findNavController(view).navigate(com.example.gundurisamushao.view.fragment.SignInFragmentDirections.actionSignInFragmentToRecoveryFragment());
         });
         binding.btnSignUp.setOnClickListener(view -> {
-            Navigation.findNavController(view).navigate(SignInFragmentDirections.actionSignInFragmentToSignUpFragment());
+            Navigation.findNavController(view).navigate(com.example.gundurisamushao.view.fragment.SignInFragmentDirections.actionSignInFragmentToSignUpFragment());
         });
         binding.btnSignIn.setOnClickListener(view -> {
             signIn();

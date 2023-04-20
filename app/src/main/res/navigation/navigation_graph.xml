@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/signInFragment"
         tools:layout="@layout/fragment_signin"
-        android:name="com.example.gundurisamushao.view.fragment.SignInFragment"
+        android:name="com.example.gundurisamushao.view.fragment.auth.SignInFragment"
         android:label="SignInFragment" >
         <action
             android:id="@+id/action_signInFragment_to_homeFragment"
@@ -37,11 +37,11 @@
     <fragment
         tools:layout="@layout/fragment_recovery"
         android:id="@+id/recoveryFragment"
-        android:name="com.example.gundurisamushao.view.fragment.RecoveryFragment"
+        android:name="com.example.gundurisamushao.view.fragment.auth.RecoveryFragment"
         android:label="RecoveryFragment" />
     <fragment
         tools:layout="@layout/fragment_signup"
         android:id="@+id/signUpFragment"
-        android:name="com.example.gundurisamushao.view.fragment.SignUpFragment"
+        android:name="com.example.gundurisamushao.view.fragment.auth.SignUpFragment"
         android:label="SignUpFragment" />
 </navigation>
