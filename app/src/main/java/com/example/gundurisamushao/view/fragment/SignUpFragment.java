@@ -1,4 +1,4 @@
-package com.example.gundurisamushao.view.fragment.auth;
+package com.example.gundurisamushao.view.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -34,6 +34,12 @@ public class SignUpFragment extends Fragment {
     private void setListeners(){
         binding.btnSignUp.setOnClickListener(view -> {
             signUp();
+        });
+        binding.btnBack.setOnClickListener(view -> {
+            Navigation.findNavController(view).popBackStack();
+        });
+        binding.tvSignIn.setOnClickListener(view -> {
+            Navigation.findNavController(view).popBackStack();
         });
     }
 

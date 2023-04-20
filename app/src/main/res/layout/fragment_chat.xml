@@ -36,8 +36,8 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
         android:id="@+id/btnSendMessage"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/send_button"
         android:backgroundTint="@color/white"

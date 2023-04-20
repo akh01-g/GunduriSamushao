@@ -1,4 +1,4 @@
-package com.example.gundurisamushao.view.fragment.auth;
+package com.example.gundurisamushao.view.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.example.gundurisamushao.databinding.FragmentRecoveryBinding;
 import com.google.android.material.snackbar.Snackbar;
@@ -34,12 +35,16 @@ public class RecoveryFragment extends Fragment {
         binding.btnResetPassword.setOnClickListener(view -> {
             resetPassword();
         });
+        binding.btnBack.setOnClickListener(view -> {
+            Navigation.findNavController(view).popBackStack();
+        });
     }
     private void resetPassword(){
         String email = binding.etEmail.getText().toString();
 
         auth.sendPasswordResetEmail(email).addOnCompleteListener(task -> {
             if (task.isSuccessful()){
+                Navigation.findNavController(binding.getRoot()).popBackStack();
                 Snackbar.make(binding.getRoot(), "Check Email", Snackbar.LENGTH_SHORT).show();
             }
             else {
