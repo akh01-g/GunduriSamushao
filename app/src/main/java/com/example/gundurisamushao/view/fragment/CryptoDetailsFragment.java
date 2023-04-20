@@ -1,6 +1,8 @@
 package com.example.gundurisamushao.view.fragment;
 
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.example.gundurisamushao.databinding.FragmentCryptoDetailsBinding;
 
@@ -25,5 +28,21 @@ public class CryptoDetailsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        setListeners();
+    }
+
+    private void setListeners(){
+        String description = getArguments().getString("description");
+        binding.tvDescription.setText(description);
+        String name = getArguments().getString("name");
+        binding.tvName.setText(name);
+        String started_at = getArguments().getString("started_at");
+        binding.tvStartedAt.setText(started_at);
+        String symbol = getArguments().getString("symbol");
+        binding.tvSymbol.setText(symbol);
+
+        binding.btnBack.setOnClickListener(view -> {
+            Navigation.findNavController(view).popBackStack();
+        });
     }
 }

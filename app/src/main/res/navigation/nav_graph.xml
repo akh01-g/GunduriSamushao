@@ -33,5 +33,18 @@
         tools:layout="@layout/fragment_crypto_details"
         android:id="@+id/cryptoDetailsFragment"
         android:name="com.example.gundurisamushao.view.fragment.CryptoDetailsFragment"
-        android:label="CryptoDetailsFragment" />
+        android:label="CryptoDetailsFragment" >
+        <argument
+            android:name="description"
+            app:argType="string" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="started_at"
+            app:argType="string" />
+        <argument
+            android:name="symbol"
+            app:argType="string" />
+    </fragment>
 </navigation>
