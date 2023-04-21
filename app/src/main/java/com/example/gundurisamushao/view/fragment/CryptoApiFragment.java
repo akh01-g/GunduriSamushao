@@ -48,7 +48,7 @@ public class CryptoApiFragment extends Fragment {
                 viewModel.getCryptoByID(coin);
                 viewModel.cryptoByIDLiveData.observe(getViewLifecycleOwner(), crypto1 -> {
                     Navigation.findNavController(binding.getRoot()).navigate(CryptoApiFragmentDirections.actionCryptoApiFragmentToCryptoDetailsFragment(
-                            crypto1.description, crypto1.name, crypto1.started_at, crypto1.symbol
+                            crypto1.description, crypto1.name, String.valueOf(crypto1.started_at), crypto1.symbol
                     ));
 
                 });

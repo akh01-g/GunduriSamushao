@@ -40,7 +40,6 @@ public class CryptoDetailsFragment extends Fragment {
         binding.tvStartedAt.setText(started_at);
         String symbol = getArguments().getString("symbol");
         binding.tvSymbol.setText(symbol);
-
         binding.btnBack.setOnClickListener(view -> {
             Navigation.findNavController(view).popBackStack();
         });
