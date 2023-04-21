@@ -44,13 +44,13 @@ public class CryptoDetailsFragment extends Fragment {
         binding.btnBack.setOnClickListener(view -> {
             Navigation.findNavController(view).navigate(CryptoDetailsFragmentDirections.actionCryptoDetailsFragmentToCryptoApiFragment());
         });
-
         String website = getArguments().getString("website");
         binding.tvWebsite.setText(website);
 
         String logo = getArguments().getString("logo");
         Glide.with(binding.imageview)
                 .load(logo)
+                .override(150,150)
                 .into(binding.imageview);
 
 
