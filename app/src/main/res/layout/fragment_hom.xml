@@ -28,7 +28,7 @@
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              app:videoId="1YyAzVmP9xQ"
-             app:autoPlay="true" />
+             app:autoPlay="false" />
 
     </androidx.cardview.widget.CardView>
 
