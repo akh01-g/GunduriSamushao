@@ -105,9 +105,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:textSize="18sp"
-                    android:text=""
-                    android:textColor="@color/white" />
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:text="Click here for more info"
+                    android:textColor="#006DC5" />
             </LinearLayout>
 
             <LinearLayout

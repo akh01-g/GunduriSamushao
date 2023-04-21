@@ -1,5 +1,6 @@
 package com.example.gundurisamushao.view.fragment;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -45,7 +46,12 @@ public class CryptoDetailsFragment extends Fragment {
             Navigation.findNavController(view).navigate(CryptoDetailsFragmentDirections.actionCryptoDetailsFragmentToCryptoApiFragment());
         });
         String website = getArguments().getString("website");
-        binding.tvWebsite.setText(website);
+        binding.tvWebsite.setOnClickListener(view -> {
+            String url = website;
+            Intent web = new Intent(Intent.ACTION_VIEW);
+            web.setData(Uri.parse(url));
+            startActivity(web);
+        });
 
         String logo = getArguments().getString("logo");
         Glide.with(binding.imageview)
