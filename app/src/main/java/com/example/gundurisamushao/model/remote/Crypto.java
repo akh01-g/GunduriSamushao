@@ -9,6 +9,7 @@ public class Crypto {
     public int rank;
     @SerializedName("id")
     public String idn;
+
     public String name;
     public String symbol;
     public String description;
