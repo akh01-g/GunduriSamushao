@@ -1,5 +1,8 @@
 package com.example.gundurisamushao.model.remote;
 
+import com.example.gundurisamushao.model.remote.brewery.BreweryService;
+import com.example.gundurisamushao.model.remote.crypto.CryptoService;
+
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

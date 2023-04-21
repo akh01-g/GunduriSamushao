@@ -1,8 +1,6 @@
 package com.example.gundurisamushao.model.repository;
 
-import android.content.Context;
-
-import com.example.gundurisamushao.model.remote.Crypto;
+import com.example.gundurisamushao.model.remote.crypto.Crypto;
 import com.example.gundurisamushao.model.remote.RetrofitInstance;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.gundurisamushao.model.remote;
+package com.example.gundurisamushao.model.remote.brewery;
 
 import java.util.List;
 

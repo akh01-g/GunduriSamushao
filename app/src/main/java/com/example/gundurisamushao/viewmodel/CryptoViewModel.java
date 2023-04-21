@@ -1,11 +1,9 @@
 package com.example.gundurisamushao.viewmodel;
 
-import android.util.Log;
-
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.gundurisamushao.model.remote.Crypto;
+import com.example.gundurisamushao.model.remote.crypto.Crypto;
 import com.example.gundurisamushao.model.repository.CryptoRepository;
 
 import java.util.List;

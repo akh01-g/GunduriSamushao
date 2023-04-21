@@ -1,6 +1,6 @@
 package com.example.gundurisamushao.model.repository;
 
-import com.example.gundurisamushao.model.remote.Brewery;
+import com.example.gundurisamushao.model.remote.brewery.Brewery;
 import com.example.gundurisamushao.model.remote.RetrofitInstance;
 
 import java.util.List;

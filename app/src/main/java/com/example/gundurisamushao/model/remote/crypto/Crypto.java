@@ -1,4 +1,4 @@
-package com.example.gundurisamushao.model.remote;
+package com.example.gundurisamushao.model.remote.crypto;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -16,7 +16,8 @@ public class Crypto {
     public String started_at;
     public String logo;
 
-    public Crypto(int rank, String idn, String name, String symbol, String description, String logo, String started_at) {
+    public Links links;
+    public Crypto(int rank, String idn, String name, String symbol, String description, String logo, String started_at, Links links) {
         this.rank = rank;
         this.idn = idn;
         this.name = name;
@@ -24,6 +25,7 @@ public class Crypto {
         this.description = description;
         this.started_at = started_at;
         this.logo = logo;
+        this.links = links;
     }
 
 

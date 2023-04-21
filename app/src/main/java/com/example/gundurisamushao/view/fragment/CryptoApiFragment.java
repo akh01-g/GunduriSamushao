@@ -13,7 +13,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.example.gundurisamushao.databinding.FragmentCryptoApiBinding;
-import com.example.gundurisamushao.model.remote.Crypto;
+import com.example.gundurisamushao.model.remote.crypto.Crypto;
 import com.example.gundurisamushao.view.adapter.CryptoAdapter;
 import com.example.gundurisamushao.viewmodel.CryptoViewModel;
 
@@ -47,12 +47,7 @@ public class CryptoApiFragment extends Fragment {
             public void onItemClick(Crypto crypto) {
                 String coin = crypto.idn;
                 viewModel.getCryptoByID(coin);
-                viewModel.cryptoByIDLiveData.observe(getViewLifecycleOwner(), crypto1 -> {
-                    Navigation.findNavController(binding.getRoot()).navigate(CryptoApiFragmentDirections.actionCryptoApiFragmentToCryptoDetailsFragment(
-                            crypto1.description, crypto1.name, String.valueOf(crypto1.started_at), crypto1.symbol
-                    ));
 
-                });
             }
         });
     }
@@ -64,6 +59,14 @@ public class CryptoApiFragment extends Fragment {
     private void setObservers(){
         viewModel.cryptoLiveData.observe(getViewLifecycleOwner(), cryptos -> {
             cryptoAdapter.updateList(cryptos);
+        });
+
+        viewModel.cryptoByIDLiveData.observe(getViewLifecycleOwner(), crypto1 -> {
+            Log.d("TAG", crypto1.logo);
+            Navigation.findNavController(binding.getRoot()).navigate(CryptoApiFragmentDirections.actionCryptoApiFragmentToCryptoDetailsFragment(
+                    crypto1.description, crypto1.name, String.valueOf(crypto1.started_at), crypto1.symbol, crypto1.logo, crypto1.links.website.get(0)
+            ));
+
         });
     }
 }

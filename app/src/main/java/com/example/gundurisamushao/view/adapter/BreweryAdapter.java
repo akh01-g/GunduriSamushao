@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gundurisamushao.databinding.ItemBreweryBinding;
-import com.example.gundurisamushao.model.remote.Brewery;
+import com.example.gundurisamushao.model.remote.brewery.Brewery;
 
 import java.util.ArrayList;
 import java.util.List;

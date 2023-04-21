@@ -3,7 +3,7 @@ package com.example.gundurisamushao.viewmodel;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.gundurisamushao.model.remote.Brewery;
+import com.example.gundurisamushao.model.remote.brewery.Brewery;
 import com.example.gundurisamushao.model.repository.BreweryRepository;
 
 import java.util.List;
