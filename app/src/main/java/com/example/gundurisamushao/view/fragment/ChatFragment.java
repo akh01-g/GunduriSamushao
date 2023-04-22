@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.gundurisamushao.databinding.FragmentChatBinding;
-import com.example.gundurisamushao.model.remote.Message;
+import com.example.gundurisamushao.model.remote.chat.Message;
 import com.example.gundurisamushao.view.adapter.MessageAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

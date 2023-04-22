@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.gundurisamushao.databinding.ItemMessageBinding;
-import com.example.gundurisamushao.model.remote.Message;
+import com.example.gundurisamushao.model.remote.chat.Message;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.gundurisamushao.model.remote;
+package com.example.gundurisamushao.model.remote.chat;
 
 public class Message {
     public String userEmail;

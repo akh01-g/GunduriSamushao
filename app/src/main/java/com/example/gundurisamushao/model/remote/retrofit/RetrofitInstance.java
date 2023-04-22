@@ -1,4 +1,4 @@
-package com.example.gundurisamushao.model.remote;
+package com.example.gundurisamushao.model.remote.retrofit;
 
 import com.example.gundurisamushao.model.remote.brewery.BreweryService;
 import com.example.gundurisamushao.model.remote.crypto.CryptoService;
