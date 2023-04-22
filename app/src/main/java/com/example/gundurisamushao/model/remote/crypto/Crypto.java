@@ -16,8 +16,9 @@ public class Crypto {
     public String started_at;
     public String logo;
     public Links links;
+    public String development_status;
 
-    public Crypto(int rank, String idn, String name, String symbol, String description, String logo, String started_at, Links links) {
+    public Crypto(int rank, String idn, String name, String symbol, String description, String logo, String started_at, Links links, String development_status) {
         this.rank = rank;
         this.idn = idn;
         this.name = name;
@@ -26,6 +27,7 @@ public class Crypto {
         this.started_at = started_at;
         this.logo = logo;
         this.links = links;
+        this.development_status = development_status;
     }
 
 

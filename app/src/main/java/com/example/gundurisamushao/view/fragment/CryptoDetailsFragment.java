@@ -42,6 +42,8 @@ public class CryptoDetailsFragment extends Fragment {
         binding.tvStartedAt.setText(started_at);
         String symbol = getArguments().getString("symbol");
         binding.tvSymbol.setText(symbol);
+        String development_status = getArguments().getString("development_status");
+        binding.tvDevelopmentStatus.setText(development_status);
         binding.btnBack.setOnClickListener(view -> {
             Navigation.findNavController(view).navigate(CryptoDetailsFragmentDirections.actionCryptoDetailsFragmentToCryptoApiFragment());
         });

@@ -76,17 +76,40 @@
                    android:layout_height="wrap_content"
                    android:text="Coin Started: "
                    android:textStyle="bold"
-                   android:textSize="20sp"
+                   android:textSize="18.5sp"
                    android:textAlignment="center" />
                <TextView
                    android:id="@+id/tvStarted_at"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:gravity="center"
-                   android:textSize="18sp"
+                   android:textSize="15.5sp"
                    android:text=""
                    android:textColor="@color/white" />
            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginVertical="5dp">
+                <TextView
+                    android:textColor="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Development status: "
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/tvDevelopmentStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:text=""
+                    android:textColor="@color/white" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"

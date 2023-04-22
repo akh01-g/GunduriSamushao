@@ -57,5 +57,8 @@
         <argument
             android:name="website"
             app:argType="string" />
+        <argument
+            android:name="development_status"
+            app:argType="string" />
     </fragment>
 </navigation>
