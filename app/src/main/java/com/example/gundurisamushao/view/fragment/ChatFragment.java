@@ -84,6 +84,8 @@ public class ChatFragment extends Fragment {
                 MessageAdapter adapter = new MessageAdapter(messages);
                 binding.rvMessage.setAdapter(adapter);
                 adapter.updateList(messages);
+
+                binding.rvMessage.scrollToPosition(messages.size() - 1);
             }
 
             @Override
