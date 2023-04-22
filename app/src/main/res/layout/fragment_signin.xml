@@ -53,6 +53,7 @@
                 android:id="@+id/tvForgotPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="end"
                 android:text="Forgot Password?"
                 android:textSize="13sp"
                 android:layout_marginLeft="3dp"
