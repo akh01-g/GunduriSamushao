@@ -53,7 +53,7 @@ public class BreweryAdapter extends RecyclerView.Adapter<BreweryAdapter.BreweryV
             binding.tvBreweryName.setText(brewery.name);
             binding.tvBreweryType.setText(brewery.brewery_type);
             binding.tvBreweryAddress.setText(brewery.address_1);
-            binding.tvCountry.setText(brewery.country);
+            binding.tvCountry.setText(brewery.country + " /");
             binding.tvCity.setText(brewery.city);
             binding.tvPhone.setText(String.valueOf(brewery.phone));
             binding.tvWebsite.setText(brewery.website_url);
