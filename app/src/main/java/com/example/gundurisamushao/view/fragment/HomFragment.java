@@ -1,5 +1,7 @@
 package com.example.gundurisamushao.view.fragment;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +25,22 @@ public class HomFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        setListeners();
+    }
+
+    private void setListeners(){
+        binding.tvWhatIsCryptoCurrency.setOnClickListener(view -> {
+            String url = "https://www.kaspersky.com/resource-center/definitions/what-is-cryptocurrency";
+            Intent web = new Intent(Intent.ACTION_VIEW);
+            web.setData(Uri.parse(url));
+            startActivity(web);
+        });
+        binding.tvWhatIsBitcoin.setOnClickListener(view -> {
+            String url = "https://www.investopedia.com/terms/b/bitcoin.asp";
+            Intent web = new Intent(Intent.ACTION_VIEW);
+            web.setData(Uri.parse(url));
+            startActivity(web);
+        });
     }
 
 
