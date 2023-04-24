@@ -8,10 +8,12 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.gundurisamushao.databinding.FragmentChatBinding;
 import com.example.gundurisamushao.model.remote.chat.Message;
 import com.example.gundurisamushao.view.adapter.MessageAdapter;
+import com.example.gundurisamushao.viewmodel.ChatViewModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,7 +33,7 @@ public class ChatFragment extends Fragment {
 
     private FragmentChatBinding binding;
     private FirebaseAuth auth = FirebaseAuth.getInstance();
-
+    private ChatViewModel chatViewModel = new ChatViewModel();
 
     private FirebaseUser user;
     DatabaseReference mdb = FirebaseDatabase.getInstance().getReference();
@@ -55,18 +57,15 @@ public class ChatFragment extends Fragment {
 
     private void init(){
         user = auth.getCurrentUser();
+        chatViewModel = new ViewModelProvider(this).get(ChatViewModel.class);
 
     }
     private void setListeners(){
         binding.btnSendMessage.setOnClickListener(view -> {
             String messagee = binding.etMessageBox.getEditText().getText().toString();
-            String dateTime = new SimpleDateFormat("dd-MM-yy HH:mma").format(Calendar.getInstance().getTime());
-            mdb.child("Messages").push().setValue(new Message(user.getEmail(), messagee, dateTime)).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    binding.etMessageBox.getEditText().setText("");
-                }
-            });
+            chatViewModel.sendMessage(user.getEmail(), messagee);
+            binding.etMessageBox.getEditText().setText("");
+
         });
     }
 
