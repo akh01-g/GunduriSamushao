@@ -70,8 +70,11 @@ public class ChatFragment extends Fragment {
     }
 
     private void receiveMessages(){
-
         chatViewModel.receiveMessages();
+        setObservers();
+    }
+
+    private void setObservers(){
         chatViewModel.messageLiveData.observe(getViewLifecycleOwner(), messages -> {
             MessageAdapter adapter = new MessageAdapter(messages);
             binding.rvMessage.setAdapter(adapter);
