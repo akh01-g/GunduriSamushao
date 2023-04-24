@@ -5,17 +5,24 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.gundurisamushao.model.remote.chat.Message;
+import com.example.gundurisamushao.view.adapter.MessageAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class ChatViewModel extends ViewModel {
 
     DatabaseReference mdb = FirebaseDatabase.getInstance().getReference();
+    public MutableLiveData<List<Message>> messageLiveData = new MutableLiveData<>();
 
 
 
@@ -30,6 +37,29 @@ public class ChatViewModel extends ViewModel {
     }
 
 
+    public void receiveMessages(){
+        mdb.child("Messages").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                List<Message> messages = new ArrayList<>();
+
+                for (DataSnapshot messageSnapshot : snapshot.getChildren()) {
+                    Message message = messageSnapshot.getValue(Message.class);
+                    messages.add(message);
+                }
+
+
+                MessageAdapter adapter = new MessageAdapter(messages);
+                messageLiveData.setValue(messages);
+                adapter.updateList(messages);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            };
+        });
+    }
 
 
 

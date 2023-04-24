@@ -70,27 +70,12 @@ public class ChatFragment extends Fragment {
     }
 
     private void receiveMessages(){
-        mdb.child("Messages").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                List<Message> messages = new ArrayList<>();
 
-                for (DataSnapshot messageSnapshot : snapshot.getChildren()) {
-                    Message message = messageSnapshot.getValue(Message.class);
-                    messages.add(message);
-                }
-
-                MessageAdapter adapter = new MessageAdapter(messages);
-                binding.rvMessage.setAdapter(adapter);
-                adapter.updateList(messages);
-
-                binding.rvMessage.scrollToPosition(messages.size() - 1);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            };
+        chatViewModel.receiveMessages();
+        chatViewModel.messageLiveData.observe(getViewLifecycleOwner(), messages -> {
+            MessageAdapter adapter = new MessageAdapter(messages);
+            binding.rvMessage.setAdapter(adapter);
+            binding.rvMessage.scrollToPosition(messages.size() - 1);
         });
     }
 }
