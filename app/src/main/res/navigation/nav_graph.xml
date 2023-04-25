@@ -16,11 +16,6 @@
         android:name="com.example.gundurisamushao.view.fragment.ChatFragment"
         android:label="ChatFragment" />
     <fragment
-        tools:layout="@layout/fragment_api"
-        android:id="@+id/apiFragment"
-        android:name="com.example.gundurisamushao.view.fragment.ApiFragment"
-        android:label="ApiFragment" />
-    <fragment
         android:id="@+id/cryptoApiFragment"
         tools:layout="@layout/fragment_crypto_api"
         android:name="com.example.gundurisamushao.view.fragment.CryptoApiFragment"
