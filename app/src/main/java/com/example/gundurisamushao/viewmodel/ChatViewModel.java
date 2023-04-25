@@ -8,6 +8,8 @@ import com.example.gundurisamushao.model.remote.chat.Message;
 import com.example.gundurisamushao.view.adapter.MessageAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -23,12 +25,15 @@ public class ChatViewModel extends ViewModel {
 
     DatabaseReference mdb = FirebaseDatabase.getInstance().getReference();
     public MutableLiveData<List<Message>> messageLiveData = new MutableLiveData<>();
+    private FirebaseAuth auth = FirebaseAuth.getInstance();
+    private FirebaseUser user;
 
 
 
-    public void sendMessage(String email, String messagee){
+    public void sendMessage(String messagee){
+        user = auth.getCurrentUser();
         String dateTime = new SimpleDateFormat("dd-MM-yy HH:mma").format(Calendar.getInstance().getTime());
-        mdb.child("Messages").push().setValue(new Message(email, messagee, dateTime)).addOnCompleteListener(new OnCompleteListener<Void>() {
+        mdb.child("Messages").push().setValue(new Message(user.getEmail(), messagee, dateTime)).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
 

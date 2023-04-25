@@ -19,10 +19,10 @@ import com.google.firebase.auth.FirebaseUser;
 public class ChatFragment extends Fragment {
 
     private FragmentChatBinding binding;
-    private FirebaseAuth auth = FirebaseAuth.getInstance();
+
     private ChatViewModel chatViewModel = new ChatViewModel();
 
-    private FirebaseUser user;
+
 
     @Nullable
     @Override
@@ -42,14 +42,13 @@ public class ChatFragment extends Fragment {
     }
 
     private void init(){
-        user = auth.getCurrentUser();
         chatViewModel = new ViewModelProvider(this).get(ChatViewModel.class);
 
     }
     private void setListeners(){
         binding.btnSendMessage.setOnClickListener(view -> {
             String messagee = binding.etMessageBox.getEditText().getText().toString();
-            chatViewModel.sendMessage(user.getEmail(), messagee);
+            chatViewModel.sendMessage(messagee);
             binding.etMessageBox.getEditText().setText("");
 
         });
