@@ -50,6 +50,7 @@ public class CryptoDetailsFragment extends Fragment {
                     youTubePlayer.loadVideo(youtubeId, 0);
                 }
                 else {
+                   binding.youtubeVideoPlayer.setVisibility(View.GONE);
                    binding.tvNoVideo.setText("NO VIDEO");
                 }
             }
