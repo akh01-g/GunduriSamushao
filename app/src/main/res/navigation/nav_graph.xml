@@ -55,5 +55,8 @@
         <argument
             android:name="development_status"
             app:argType="string" />
+        <argument
+            android:name="youtube"
+            app:argType="string" />
     </fragment>
 </navigation>

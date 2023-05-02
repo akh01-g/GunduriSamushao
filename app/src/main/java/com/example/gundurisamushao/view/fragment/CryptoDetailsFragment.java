@@ -3,7 +3,6 @@ package com.example.gundurisamushao.view.fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +14,11 @@ import androidx.navigation.Navigation;
 
 import com.bumptech.glide.Glide;
 import com.example.gundurisamushao.databinding.FragmentCryptoDetailsBinding;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CryptoDetailsFragment extends Fragment {
 
@@ -30,10 +34,38 @@ public class CryptoDetailsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        setListeners();
+        init();
+        addVideoInYoutubePlayer();
     }
 
-    private void setListeners(){
+    private void addVideoInYoutubePlayer(){
+        String youtube = getArguments().getString("youtube");
+        String youtubeId = getYoutubeIdFromUrl(youtube);
+
+        binding.youtubeVideoPlayer.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
+            @Override
+            public void onReady(@NonNull YouTubePlayer youTubePlayer) {
+                super.onReady(youTubePlayer);
+                if(youtubeId!=null){
+                    youTubePlayer.loadVideo(youtubeId, 0);
+                }
+                else {
+                   binding.tvNoVideo.setText("NO VIDEO");
+                }
+            }
+        });
+    }
+    public String getYoutubeIdFromUrl(String url) {
+        String pattern = "(?i)^.*(?:youtu\\.be\\/|v\\/|u/\\w/|embed\\/|watch\\?v=)([\\w-]{10,12}).*$";
+        Pattern compiledPattern = Pattern.compile(pattern, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = compiledPattern.matcher(url);
+        if (matcher.matches()) {
+            return matcher.group(1);
+        }
+        return null;
+    }
+
+    private void init(){
         String description = getArguments().getString("description");
         binding.tvDescription.setText(description);
         String name = getArguments().getString("name");
@@ -60,7 +92,6 @@ public class CryptoDetailsFragment extends Fragment {
                 .load(logo)
                 .override(150,150)
                 .into(binding.imageview);
-
 
 
     }
