@@ -41,6 +41,19 @@ public class HomFragment extends Fragment {
             web.setData(Uri.parse(url));
             startActivity(web);
         });
+
+        binding.tvWhatIsEthereum.setOnClickListener(view -> {
+            String url = "https://www.techtarget.com/whatis/definition/Ethereum";
+            Intent web = new Intent(Intent.ACTION_VIEW);
+            web.setData(Uri.parse(url));
+            startActivity(web);
+        });
+        binding.tvWhatIsTether.setOnClickListener(view -> {
+            String url = "https://www.forbes.com/advisor/investing/cryptocurrency/what-is-tether-usdt/";
+            Intent web = new Intent(Intent.ACTION_VIEW);
+            web.setData(Uri.parse(url));
+            startActivity(web);
+        });
     }
 
 
